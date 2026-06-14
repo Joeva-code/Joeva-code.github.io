@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fullstack Node.js Developer Portfolio">
+    <title>Joseph Adugu | Fullstack Developer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Joeva-<span>CODE</span></a>
+            </div>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <div class="hero-text">
+                        <h1>Hi, I'm <span class="highlight">Joseph Adugu</span></h1>
+                        <h2><span id="typed-text"></span><span class="cursor">|</span></h2>
+                        <p><strong>Fullstack  Developer</strong> with expertise in building scalable web applications, RESTful APIs, and database design.</p>
+                        <div class="hero-buttons">
+                            <a href="projects.html" class="btn btn-primary">View My Works</a>
+                            <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="assets/images/WhatsApp Image 2026-06-14 at 11.41.00.jpeg" alt="Joseph Adugu - Fullstack Developer" onerror="this.src='https://via.placeholder.com/400x400?text=Profile+Photo'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-title">Technical <span>Skills</span></h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-node-js"></i>
+                        <h3>Node.js</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="90"></div>
+                        </div>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-react"></i>
+                        <h3>React.js</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="85"></div>
+                        </div>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h3>PostgreSQL</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="88"></div>
+                        </div>
+                        <span>88%</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-server"></i>
+                        <h3>Express.js</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="92"></div>
+                        </div>
+                        <span>92%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" data-aos="fade-up">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h2 class="section-title">About <span>Me</span></h2>
+                        <p>I'm a <strong>highly competent Fullstack developer</strong> with over <strong>4+ years of experience</strong> building web applications for diverse clients.</p>
+                        <p>My expertise spans the <em>entire development lifecycle</em> - from requirements gathering and system design to implementation, testing, and deployment. I specialize in creating <strong>RESTful APIs</strong>, integrating databases, and building responsive frontends.</p>
+                        <p>I'm currently <strong>available for freelance work</strong> and full-time opportunities. Let's build something amazing together! 🚀</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number" data-target="8">0</div>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-target="2">0</div>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-target="8">0</div>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-title">My <span>Services</span></h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Web Development</h3>
+                        <p>Fullstack applications with React, Node.js, Express, and modern frameworks.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>API Development</h3>
+                        <p>RESTful and GraphQL APIs with proper documentation and authentication.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-database"></i>
+                        <h3>Database Design</h3>
+                        <p>MongoDB, PostgreSQL, MySQL - schema design, optimization, and migrations.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>Tech Coaching</h3>
+                        <p>Mentoring junior developers and teaching fullstack development concepts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Stats Section (Dynamic) -->
+        <section class="github-stats" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-title">GitHub <span>Activity</span></h2>
+                <div class="github-grid">
+                    <div class="github-card">
+                        <i class="fab fa-github"></i>
+                        <h3>Public Repos</h3>
+                        <p id="repo-count">Loading...</p>
+                    </div>
+                    <div class="github-card">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>Total Stars</h3>
+                        <p id="star-count">Loading...</p>
+                    </div>
+                    <div class="github-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Followers</h3>
+                        <p id="follower-count">Loading...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Joe Adugu</h3>
+                    <p>Fullstack Developer building scalable web applications.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/Joeva-code" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Joeva-Code. All rights reserved.</p>
+                <p><a href="#top">Back to top ↑</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
