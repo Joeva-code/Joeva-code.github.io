@@ -17,14 +17,22 @@ const skills = [
 function About() {
   return (
     <section className="glass-card my-6 space-y-8">
-      <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }}>
-        <h2 className="text-3xl font-semibold text-white">About Me</h2>
-        <p className="mt-4 text-slate-300 leading-8">
-          Highly competent Fullstack Developer with over 2+ years of experience building scalable web applications for diverse clients. Expertise spans the entire development lifecycle from requirements gathering and system design to implementation, testing, and deployment.
-        </p>
-        <p className="mt-4 text-slate-300 leading-8">
-          Specializes in creating RESTful APIs, integrating databases (PostgreSQL, MongoDB, MySQL), and building responsive frontends with React.js.
-        </p>
+      <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className="grid gap-6 md:grid-cols-3">
+        <div className="col-span-2">
+          <h2 className="text-3xl font-semibold text-white">About Me</h2>
+          <p className="mt-4 text-slate-300 leading-8">
+            Highly competent Fullstack Developer with over 2+ years of experience building scalable web applications for diverse clients. Expertise spans the entire development lifecycle from requirements gathering and system design to implementation, testing, and deployment.
+          </p>
+          <p className="mt-4 text-slate-300 leading-8">
+            Specializes in creating RESTful APIs, integrating databases (PostgreSQL, MongoDB, MySQL), and building responsive frontends with React.js.
+          </p>
+        </div>
+
+        <div className="col-span-1 flex items-start justify-center">
+          <div className="h-40 w-40 overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/60">
+            <img src="/profile.jpg" alt="Profile" onError={(e) => ((e.currentTarget as HTMLImageElement).src = '/logo192.png')} className="h-full w-full object-cover" />
+          </div>
+        </div>
       </motion.div>
 
       <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4, delay: 0.1 }} className="grid gap-6 md:grid-cols-[1.5fr_1fr]">

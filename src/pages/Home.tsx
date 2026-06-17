@@ -5,7 +5,7 @@ const skills = ['React.js', 'Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Tail
 
 function Home() {
   return (
-    <section className="glass-card my-6 grid gap-8 p-8 md:grid-cols-[2fr_1fr]">
+    <section className="my-6 grid gap-8 p-6 md:grid-cols-2">
       <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
         <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">Fullstack Developer</p>
         <h1 className="mt-4 text-5xl font-semibold text-white md:text-6xl">Joseph Adugu</h1>
@@ -34,7 +34,15 @@ function Home() {
       <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="relative overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/90 p-6 shadow-glow">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.28),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(251,146,60,0.18),_transparent_25%)]" />
         <div className="relative flex h-full flex-col items-center justify-center gap-6 text-center">
-          <div className="h-52 w-52 rounded-full bg-gradient-to-br from-cyan-500 to-orange-500 shadow-[0_0_60px_rgba(56,189,248,0.35)]" />
+          <div className="relative h-52 w-52 rounded-full overflow-hidden shadow-[0_0_60px_rgba(56,189,248,0.35)]">
+            <img
+              src="/profile.jpg"
+              alt="Profile"
+              onError={(e) => ((e.currentTarget as HTMLImageElement).src = '/logo512.png')}
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 rounded-full ring-2 ring-cyan-500/30" />
+          </div>
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Location</p>
             <p className="mt-2 text-xl font-semibold text-white">Abuja, Nigeria</p>
