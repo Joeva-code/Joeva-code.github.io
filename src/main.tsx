@@ -5,6 +5,13 @@ import App from './App'
 import './styles/tailwind.css'
 import { ThemeProvider } from './context/ThemeContext'
 
+// Handle GitHub Pages SPA routing
+const redirect = sessionStorage.redirect
+delete sessionStorage.redirect
+if (redirect && redirect !== location.pathname) {
+  history.replaceState(null, '', redirect)
+}
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider>
