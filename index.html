@@ -4,11 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="React portfolio built with Vite, Tailwind, and Framer Motion" />
-    <title>My Portfolio</title>
-    <script type="module" crossorigin src="/assets/index-CTL1Rmtl.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-ErSTBu7E.css">
+    <title>Joeva_code| Fullstack Developer</title>
+    <script type="module" crossorigin src="/assets/index-CMH-9JV2.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-wgVS9EdK.css">
   </head>
-  <body class="bg-slate-950 text-slate-100">
-    <div id="root"></div>
+  <body>
+    <script>
+      const savedTheme = localStorage.getItem('theme')
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark')
+        document.documentElement.style.colorScheme = 'dark'
+      } else {
+        document.documentElement.style.colorScheme = 'light'
+      }
+    </script>
+    <div id="root"></div>
   </body>
 </html>
