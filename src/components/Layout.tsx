@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from './Navbar'
+import Footer from './Footer'
 
 interface LayoutProps {
   children?: ReactNode
@@ -32,6 +33,7 @@ function Layout({ children }: LayoutProps) {
           {children ?? <Outlet />}
         </motion.main>
       </AnimatePresence>
+      <Footer />
     </div>
   )
 }

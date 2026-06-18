@@ -1,0 +1,58 @@
+import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { useState } from 'react'
+
+const links = [
+  { label: 'Home', path: '/' },
+  { label: 'Work', path: '/projects' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+]
+
+function Navbar() {
+  const [avatarError, setAvatarError] = useState(false)
+
+  return (
+    <header className="relative">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <motion.div
+          className="flex items-center text-lg font-semibold tracking-tight text-slate-800"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35 }}
+        >
+          <img
+            src={avatarError ? '/logo192.png' : '/profile.jpg'}
+            alt="Profile"
+            onError={() => setAvatarError(true)}
+            className="mr-3 h-9 w-9 rounded-full object-cover ring-1 ring-slate-200"
+          />
+          <span className="text-slate-800">loggipsum</span>
+        </motion.div>
+
+        <nav className="hidden md:flex md:flex-1 md:justify-center md:gap-8">
+          {links.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              className={({ isActive }) =>
+                (isActive ? 'text-indigo-700' : 'text-slate-600') +
+                ' px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-indigo-700'
+              }
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <NavLink to="/contact" className="hidden md:inline-flex items-center rounded-lg border border-indigo-200 bg-white px-4 py-2 text-sm font-medium text-indigo-700 shadow-sm hover:brightness-95">
+            Contact Me
+          </NavLink>
+        </div>
+      </div>
+    </header>
+  )
+}
+
+export default Navbar

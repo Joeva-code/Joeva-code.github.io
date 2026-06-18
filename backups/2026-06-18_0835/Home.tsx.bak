@@ -1,0 +1,95 @@
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { useEffect, useMemo, useState } from 'react'
+
+const skills = ['React.js', 'Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Tailwind CSS']
+const roles = ['Fullstack Developer', 'UI Engineer', 'Open Source Contributor', 'Tech Speaker']
+const stack = ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Tailwind', 'Framer Motion']
+
+function useTypewriter(words: string[], typingSpeed = 60, pause = 1400) {
+  const [text, setText] = useState('')
+  const [idx, setIdx] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  useEffect(() => {
+    const current = words[idx % words.length]
+    let timeout: number
+
+    if (!isDeleting) {
+      timeout = window.setTimeout(() => setText(current.slice(0, text.length + 1)), typingSpeed)
+      if (text === current) timeout = window.setTimeout(() => setIsDeleting(true), pause)
+    } else {
+      timeout = window.setTimeout(() => setText(current.slice(0, text.length - 1)), typingSpeed / 2)
+      if (text === '') {
+        setIsDeleting(false)
+        setIdx((i) => i + 1)
+      }
+    }
+
+    return () => window.clearTimeout(timeout)
+  }, [text, isDeleting, idx, words, typingSpeed, pause])
+
+  return text
+}
+
+function generateParticles(count = 18) {
+  return Array.from({ length: count }).map((_, i) => ({
+    id: i,
+    size: Math.floor(Math.random() * 24) + 12,
+    left: Math.random() * 100,
+    top: Math.random() * 100,
+    delay: Math.random() * 6,
+    duration: 6 + Math.random() * 8,
+    color: Math.random() > 0.65 ? 'bg-cyan-400/18' : 'bg-fuchsia-500/12',
+  }))
+}
+
+export default function Home() {
+  const typed = useTypewriter(roles, 55, 1400)
+
+  return (
+    <section className="py-12">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-8 md:grid-cols-2 items-center rounded-xl bg-white p-8 shadow-lg">
+          <div className="space-y-6 px-2">
+            <p className="text-sm text-slate-500">Hey, I’m John</p>
+
+            <h1 className="text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
+              <span className="block text-indigo-600">Full Stack</span>
+              <span className="block">Developer</span>
+            </h1>
+
+            <p className="text-slate-600 max-w-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+
+            <div className="flex items-center gap-4">
+              <Link to="/contact" className="inline-flex items-center rounded-full bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-md hover:brightness-105">Get in Touch</Link>
+              <Link to="/projects" className="inline-flex items-center rounded-full border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700">Portfolio</Link>
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">React</span>
+              <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">TypeScript</span>
+              <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">Tailwind</span>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-center">
+            <div className="relative flex items-center justify-center">
+              <div className="rounded-3xl bg-gradient-to-br from-white to-slate-50 p-2 shadow-2xl">
+                <div className="relative h-[420px] w-[260px] overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <img src="/profile.jpg" alt="Profile" className="h-full w-full object-cover" onError={(e) => ((e.currentTarget as HTMLImageElement).src = '/logo512.png')} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden md:block absolute -right-12 top-12 h-40 w-40 rounded-full border-8 border-white shadow-xl">
+                <img src="/profile.jpg" alt="Profile" className="h-full w-full rounded-full object-cover" onError={(e) => ((e.currentTarget as HTMLImageElement).src = '/logo512.png')} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
