@@ -5,11 +5,10 @@
   "type": "module",
    "homepage": "https://joeva-code.github.io",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "node scripts/use-source-index.mjs && vite",
+    "build": "node scripts/use-source-index.mjs && tsc && vite build && node scripts/publish-root.mjs",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && node scripts/deploy-pages.mjs"
   },
   "dependencies": {
     "framer-motion": "^11.0.0",
