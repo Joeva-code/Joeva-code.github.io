@@ -18,7 +18,7 @@ function Layout({ children }: LayoutProps) {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen text-[#17130f]">
       <Navbar />
       <AnimatePresence mode="wait" initial={false}>
         <motion.main
@@ -28,7 +28,7 @@ function Layout({ children }: LayoutProps) {
           animate="animate"
           exit="exit"
           transition={{ duration: 0.35, ease: 'easeOut' }}
-          className="mx-auto flex min-h-[calc(100vh-72px)] max-w-6xl flex-col px-6 py-10 md:px-10"
+          className="page-shell flex min-h-[calc(100vh-72px)] flex-col py-3 md:py-6"
         >
           {children ?? <Outlet />}
         </motion.main>

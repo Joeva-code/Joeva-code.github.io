@@ -1,90 +1,119 @@
 import { motion } from 'framer-motion'
 
-const skills = [
-  'React.js',
-  'JavaScript (ES6+)',
-  'HTML5',
-  'Tailwind CSS',
-  'Responsive Design',
-  'Node.js',
-  'Express.js',
-  'RESTful APIs',
-  'PostgreSQL',
-  'MongoDB',
-  'MySQL',
+const skillGroups = [
+  { title: 'Frontend', skills: ['React.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Responsive UI'] },
+  { title: 'Backend', skills: ['Node.js', 'Express.js', 'REST APIs', 'Authentication', 'API Documentation'] },
+  { title: 'Data', skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'Schema Design', 'Data Modeling'] },
+]
+
+const experience = [
+  {
+    role: 'Fullstack Developer',
+    company: 'CHIA-AONDOTER NIG LTD',
+    period: '2025 - Present',
+    notes: [
+      'Design and deliver fullstack applications with React, Node.js, and Express.',
+      'Build secure RESTful APIs with authentication, validation, and documentation.',
+      'Model PostgreSQL and MongoDB data structures for scalable business workflows.',
+    ],
+  },
+  {
+    role: 'Backend Developer',
+    company: 'FXYAGRO TECH',
+    period: '2024 - 2025',
+    notes: ['Improved backend reliability, API integrations, and data flows for internal product operations.'],
+  },
 ]
 
 function About() {
   return (
-    <section className="my-6 space-y-10">
-      <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className="grid gap-8 md:grid-cols-3">
-        <div className="col-span-2">
-          <h2 className="text-4xl font-bold text-white sm:text-5xl">About Me</h2>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-            Highly competent Fullstack Developer with over 2 years of experience building scalable web applications for diverse clients. My expertise spans the full development lifecycle from planning and architecture to implementation, testing, and delivery.
-          </p>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-            I specialize in creating RESTful APIs, integrating databases like PostgreSQL and MongoDB, and building responsive React interfaces with polished animations and strong UX.
-          </p>
-        </div>
-
-        <div className="col-span-1 flex items-start justify-center">
-          <div className="h-44 w-44 overflow-hidden rounded-[2rem] border border-slate-800/70 bg-slate-900/80 shadow-[0_20px_60px_rgba(15,23,42,0.35)]">
-            <img src="/profile.jpg" alt="Profile" onError={(e) => ((e.currentTarget as HTMLImageElement).src = '/logo192.png')} className="h-full w-full object-cover" />
+    <section className="space-y-6">
+      <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="panel p-5 sm:p-6 lg:p-7">
+          <p className="section-label">About Joseph</p>
+          <h2 className="section-title mt-3">I like building software that feels simple in front and disciplined underneath.</h2>
+          <div className="mt-5 space-y-4 text-base leading-7 text-[#5d554c]">
+            <p>
+              I work across planning, interface design, API development, database structure, testing, and deployment. My strongest work happens where product clarity meets steady engineering.
+            </p>
+            <p>
+              I care about organized components, predictable endpoints, clear data relationships, and interfaces that adapt naturally across mobile and desktop screens.
+            </p>
           </div>
         </div>
+
+        <aside className="panel overflow-hidden p-3">
+          <div className="overflow-hidden rounded-md bg-[#17130f]">
+            <img
+              src={import.meta.env.BASE_URL + 'profile.jpg'}
+              alt="Joseph Adugu"
+              onError={(e) => ((e.currentTarget as HTMLImageElement).src = import.meta.env.BASE_URL + 'logo192.png')}
+              className="aspect-[4/3] w-full object-cover object-top sm:aspect-[5/3] lg:aspect-[4/3]"
+            />
+          </div>
+
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-md border bg-[#f6f0e6] p-4">
+              <p className="section-label">Education</p>
+              <p className="mt-2 font-black text-[#17130f]">B.Sc. (Ed) Chemistry</p>
+              <p className="mt-1 text-sm leading-6 text-[#6f665d]">University of Agriculture Makurdi</p>
+            </div>
+            <div className="rounded-md border bg-[#f6f0e6] p-4">
+              <p className="section-label">Location</p>
+              <p className="mt-2 font-black text-[#17130f]">Abuja, Nigeria</p>
+              <p className="mt-1 text-sm leading-6 text-[#6f665d]">Open to remote collaboration</p>
+            </div>
+          </div>
+        </aside>
       </motion.div>
 
-      <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4, delay: 0.1 }} className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
-        <div className="space-y-8 rounded-[2rem] border border-slate-800/60 bg-slate-900/90 p-8 shadow-[0_24px_80px_rgba(15,23,42,0.35)]">
-          <div>
-            <h3 className="text-2xl font-semibold text-white">Experience</h3>
-            <div className="mt-6 space-y-6 text-slate-300">
-              <div className="space-y-2 rounded-3xl bg-slate-950/80 p-5">
-                <p className="font-semibold text-white">CHIA-AONDOTER NIG LTD</p>
-                <p className="text-sm text-cyan-300">Fullstack Developer • 2025 - Present</p>
-                <ul className="mt-4 list-inside list-disc space-y-2 text-slate-300">
-                  <li>Designed and delivered fullstack applications using React, Node.js, and Express.</li>
-                  <li>Built secure RESTful APIs with authentication and documentation.</li>
-                  <li>Architected PostgreSQL and MongoDB schemas for scalable systems.</li>
-                  <li>Collaborated with stakeholders to convert requirements into working software.</li>
-                  <li>Deployed and monitored cloud-hosted applications.</li>
+      <div className="grid gap-5 lg:grid-cols-[1fr_0.95fr]">
+        <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 }} className="panel p-5 sm:p-6">
+          <h3 className="text-xl font-black text-[#17130f]">Experience</h3>
+          <div className="mt-5 space-y-4">
+            {experience.map((item) => (
+              <article key={`${item.company}-${item.role}`} className="border-l-4 border-[#496f5d] bg-[#f6f0e6] p-4">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <p className="text-base font-black text-[#17130f]">{item.role}</p>
+                    <p className="mt-1 text-sm font-black uppercase text-[#bf5b39] [letter-spacing:0.12em]">{item.company}</p>
+                  </div>
+                  <p className="rounded-md border bg-[#fffaf0] px-3 py-1 text-xs font-black uppercase text-[#5d554c] [letter-spacing:0.1em]">{item.period}</p>
+                </div>
+                <ul className="mt-4 space-y-2 text-sm leading-6 text-[#5d554c]">
+                  {item.notes.map((note) => (
+                    <li key={note} className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#bf5b39]" />
+                      <span>{note}</span>
+                    </li>
+                  ))}
                 </ul>
-              </div>
-
-              <div className="space-y-2 rounded-3xl bg-slate-950/80 p-5">
-                <p className="font-semibold text-white">FXYAGRO TECH</p>
-                <p className="text-sm text-cyan-300">Backend Developer • 2024 - 2025</p>
-                <p className="mt-3 text-slate-300 leading-7">
-                  Worked on internal platforms and integrations, improving backend reliability and data flows across teams.
-                </p>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
+        </motion.div>
 
-          <div>
-            <h3 className="text-2xl font-semibold text-white">Education</h3>
-            <div className="mt-5 space-y-3 text-slate-300">
-              <p className="font-semibold text-white">B.Sc. (Ed) Chemistry</p>
-              <p>University of Agriculture Makurdi, Benue State, Nigeria</p>
-              <p className="text-sm text-slate-400">Graduate</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="rounded-[2rem] border border-slate-800/60 bg-slate-900/90 p-8 shadow-[0_24px_80px_rgba(15,23,42,0.35)]">
-          <h3 className="text-2xl font-semibold text-white">Skills</h3>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            {skills.map((skill) => (
-              <div key={skill} className="rounded-3xl bg-slate-950/95 px-4 py-3 text-sm font-medium text-slate-100 ring-1 ring-slate-700/50">
-                {skill}
+        <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.18 }} className="panel p-5 sm:p-6">
+          <h3 className="text-xl font-black text-[#17130f]">Core Skills</h3>
+          <div className="mt-5 space-y-5">
+            {skillGroups.map((group) => (
+              <div key={group.title}>
+                <p className="text-sm font-black uppercase text-[#bf5b39] [letter-spacing:0.18em]">{group.title}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <span key={skill} className="rounded-md border bg-[#f6f0e6] px-3 py-1.5 text-xs font-bold text-[#5d554c]">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   )
 }
 
 export default About
+
