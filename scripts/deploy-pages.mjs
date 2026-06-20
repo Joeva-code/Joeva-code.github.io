@@ -17,7 +17,19 @@ function run(command, args, options = {}) {
   }
 }
 
-run('git', ['add', 'index.html', '404.html', 'assets']);
+run('git', [
+  'add',
+  'index.html',
+  '404.html',
+  'assets',
+  'favicon.ico',
+  'Gemini_Generated_Image_lk57xllk57xllk57.png',
+  'logo192.png',
+  'logo512.png',
+  'manifest.json',
+  'profile.jpg',
+  'robots.txt',
+]);
 
 const diff = spawnSync('git', ['diff', '--cached', '--quiet'], {
   cwd: root,
